@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
+:root {
+  --border-color: #e3e4e5;
+  --background-color: #c5c4c4;
+  --primary-tile-color: #dfdfdf;
+  --primary-check-color: #d48a81;
+  --secondary-color: #319bec;
+  --text-color: #0c0c0c;
+  --primary-hover: #6d849b;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  font-family: "Hind Siliguri";
+}
+
+.draggable-list {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0;
+  list-style-type: none;
+}
+
+.draggable-list li {
+  background-color: var(--primary-tile-color);
+  display: flex;
+  flex: 1;
+}
+.draggable-list li:not(:last of type) {
+  border-bottom: 1px solid var(--border-color);
+}
+.draggable-list .number {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+
+  height: 60px;
+  width: 60px;
+}
+.draggable-list .over .draggable {
+  background-color: var(--primary-hover);
+}
+
+.draggable-list .person-name {
+  margin: 0 20px 0 0;
+}
+/* change the color of the persons name depending on if the order is correct or not. */
+.draggable-list li.right .person-name {
+  color: #3ae374;
+}
+.draggable-list li.wrong .person-name {
+  color: #e33a3a;
+}
+.draggable {
+  border-style: solid;
+  border-bottom: none;
+  border-top: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+}
+/* Check btn attributes */
+.check-btn {
+  background-color: var(--primary-tile-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.check-btn:active {
+  transform: scale(0.92);
+}
+.check-btn:hover {
+  color: aliceblue;
+  border: none;
+  background-color: var(--primary-hover);
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.check-btn:focus {
+  outline: none;
+}
